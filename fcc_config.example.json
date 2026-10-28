@@ -23,6 +23,7 @@
     "filing_on_behalf_of_someone": "No"
   },
   "report_to_7726": true,
+  "delete_and_report_spam": true,
   "subjects": [
     "Unsolicited text message to a number on the Do Not Call Registry",
     "Unwanted text message sent to my Do Not Call registered number",

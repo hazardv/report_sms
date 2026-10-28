@@ -216,6 +216,56 @@ def report_to_7726(sender, content):
         print(f"Could not finish reporting to {SPAM_SHORT_CODE}: {e}")
 
 
+DELETE_AND_REPORT_SCRIPT = """
+tell application "Messages" to activate
+tell application "System Events" to tell process "Messages"
+    set opened to false
+    repeat with barItem in menu bar items of menu bar 1
+        try
+            set matches to (menu items of menu 1 of barItem whose name starts with "Delete Conversation")
+            if matches is not {} then
+                click item 1 of matches
+                set opened to true
+                exit repeat
+            end if
+        end try
+    end repeat
+    if not opened then error "Could not find the Delete Conversation menu item."
+
+    repeat 20 times
+        repeat with w in windows
+            try
+                click button "Delete and Report Spam" of sheet 1 of w
+                return
+            end try
+            try
+                click button "Delete and Report Spam" of w
+                return
+            end try
+        end repeat
+        delay 0.25
+    end repeat
+    error "Could not find the Delete and Report Spam button."
+end tell
+"""
+
+
+def delete_and_report_spam(sender):
+    """Open the sender's conversation in Messages, then Delete and Report Spam after confirming."""
+    digits = sender.replace("-", "")
+    subprocess.run(["open", f"sms:+1{digits}"], check=False)
+    print(f"\nOpened the conversation with {sender} in Messages.")
+    if not ask_yes_no("Is that conversation showing in Messages? Delete it and report it as spam to Apple?"):
+        return
+    result = subprocess.run(["osascript", "-e", DELETE_AND_REPORT_SCRIPT], capture_output=True, text=True)
+    if result.returncode:
+        print(f"Could not delete and report in Messages: {result.stderr.strip()}\n"
+              "Your terminal app needs Accessibility access: System Settings > Privacy & Security > "
+              "Accessibility. You can also do it yourself from Conversation > Delete Conversation.")
+    else:
+        print("Deleted the conversation and reported it as spam.")
+
+
 def choose(page, label, option):
     """Pick an option from one of the form's dropdowns."""
     # Playwright's selector syntax can't contain an unescaped "/" inside a regex.
@@ -393,6 +443,8 @@ def main():
 
         if config.get("report_to_7726"):
             report_to_7726(sender, report["content"])
+        if config.get("delete_and_report_spam"):
+            delete_and_report_spam(sender)
         input("Press Enter to close the browser.")
         browser.close()
 

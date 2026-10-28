@@ -14,6 +14,9 @@ Nothing is submitted until you confirm in the terminal.
 - **Full Disk Access** for your terminal app, so it can read
   `~/Library/Messages/chat.db`: System Settings > Privacy & Security > Full Disk Access
 - Google Chrome (falls back to Playwright's bundled Chromium)
+- **Accessibility** access for your terminal app, only if you use
+  `delete_and_report_spam`, so it can click through Messages' menus:
+  System Settings > Privacy & Security > Accessibility
 
 ## Setup
 
@@ -50,6 +53,8 @@ The script will:
 6. Log the report to `fcc_reports.csv`.
 7. If `report_to_7726` is `true`, forward the text to 7726 (the carrier spam
    short code) through Messages, followed by the sender's number.
+8. If `delete_and_report_spam` is `true`, open the conversation in Messages and,
+   once you confirm it's the right one, choose Delete and Report Spam.
 
 Options:
 
@@ -71,6 +76,7 @@ python3 last_message.py 555-555-5555
 | `contact` | Your name, address, email and phone for the complaint |
 | `answers` | Fixed answers to the form's dropdowns (phone type, Do Not Call status, consent) |
 | `report_to_7726` | Also forward reported texts to 7726 |
+| `delete_and_report_spam` | Delete reported conversations in Messages with Delete and Report Spam |
 | `subjects`, `descriptions` | Templates for non-political texts |
 | `political_subjects`, `political_descriptions` | Templates for political texts |
 
