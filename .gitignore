@@ -1,0 +1,12 @@
+# Personal details and report history
+fcc_config.json
+fcc_reports.csv
+
+# Unrelated local data dumps
+wh_import_test_*
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.DS_Store

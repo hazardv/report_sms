@@ -1,0 +1,58 @@
+{
+  "contact": {
+    "email": "you@example.com",
+    "first_name": "First",
+    "last_name": "Last",
+    "address1": "123 Main St",
+    "address2": "",
+    "city": "City",
+    "state": "Michigan",
+    "zip": "00000",
+    "phone": "555-555-5555"
+  },
+  "answers": {
+    "number_received_on": "555-555-5555",
+    "phone_method": "Wireless (cell phone/other mobile device)",
+    "phone_type": "Residential/Personal",
+    "registered_on_do_not_call": "Yes",
+    "gave_permission": "No",
+    "did_business_with_sender": "No",
+    "made_inquiry_or_application": "No",
+    "personal_relationship_with_sender": "No",
+    "claimed_false_organization": "No",
+    "filing_on_behalf_of_someone": "No"
+  },
+  "report_to_7726": true,
+  "subjects": [
+    "Unsolicited text message to a number on the Do Not Call Registry",
+    "Unwanted text message sent to my Do Not Call registered number",
+    "Text message received despite Do Not Call Registry listing",
+    "Unsolicited text to my cell phone on the Do Not Call list",
+    "Do Not Call violation: unwanted text message to my mobile number",
+    "Unauthorized text message to a number on the National DNC Registry",
+    "Spam text message to my number on the National Do Not Call Registry"
+  ],
+  "descriptions": [
+    "On {date} at {time}, I received an unsolicited text message from {sender} on my cell phone ({received_on}). My number is registered on the National Do Not Call Registry and I have never given this sender permission to contact me. The full text of the message is included in the Additional Information field.",
+    "I received an unwanted text message from {sender} on {date} at {time}. The number it was sent to, {received_on}, is listed on the National Do Not Call Registry. I have no relationship with the sender and did not consent to receive messages from them. The message text is provided under Additional Information.",
+    "My cell phone number ({received_on}) is on the Do Not Call Registry, yet on {date} at {time} I received an unsolicited text from {sender}. I never opted in to messages from this sender or gave anyone permission to share my number with them. Please see Additional Information for the exact message.",
+    "This complaint concerns an unsolicited text message sent to {received_on} by {sender} on {date} at {time}. My number has been registered on the National Do Not Call Registry, and I have not given this sender prior express consent to contact me. The content of the message appears in the Additional Information field.",
+    "On {date} at approximately {time}, {sender} sent an unsolicited text message to my mobile number, {received_on}, which is registered on the Do Not Call Registry. I do not know the sender and never agreed to receive texts from them. I have copied the message into the Additional Information field.",
+    "I am reporting a text message I did not request or consent to. It came from {sender} on {date} at {time} and was sent to my number, {received_on}, which is on the National Do Not Call Registry. The full message is included below in Additional Information.",
+    "I received a text message from {sender} at {time} on {date} without ever having given my consent. My phone number, {received_on}, is registered on the Do Not Call Registry specifically to prevent unwanted contact like this. The text of the message is in the Additional Information field."
+  ],
+  "political_subjects": [
+    "Unsolicited political text message sent without my consent",
+    "Unwanted political campaign text to my cell phone",
+    "Political text message received without my permission",
+    "Unsolicited political messaging to my personal mobile number",
+    "Unwanted political text from a sender I never opted in with"
+  ],
+  "political_descriptions": [
+    "On {date} at {time}, I received an unsolicited political text message from {sender} on my cell phone ({received_on}). I never gave this sender or any campaign permission to text me, and I do not know how they obtained my number. The full text of the message is included in the Additional Information field.",
+    "I received an unwanted political text from {sender} on {date} at {time}. The message was sent to my personal cell phone, {received_on}, without my consent. I have never signed up for messages from this sender. The message text is provided under Additional Information.",
+    "This complaint concerns a political text message sent to my mobile number, {received_on}, by {sender} on {date} at {time}. I did not provide my number to this sender or consent to receive their messages. Please see Additional Information for the exact message.",
+    "On {date} at approximately {time}, {sender} sent a political text message to my cell phone ({received_on}). I never opted in to receive political messages from this sender. My number is also registered on the Do Not Call Registry. I have copied the message into the Additional Information field.",
+    "I am reporting an unsolicited political text message I did not request. It came from {sender} on {date} at {time} and was sent to my cell phone, {received_on}. I have no relationship with the sender and never agreed to be contacted. The full message is included in Additional Information."
+  ]
+}
